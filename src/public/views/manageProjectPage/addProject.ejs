@@ -1,0 +1,124 @@
+<div class="main-card-container">
+    <div id="card-container" class="row justify-content-center">
+        <div class="container mt-5">
+
+            <% if (typeof message !== 'undefined' && message !== null) { %>
+                <%- include('../loginPage/alert.ejs', { message: message, alertType: alertType||'' }) %>
+              <% } %>
+          
+            <h2 class="text-center">ADD NEW PROJECT</h2>
+            <form action="/project/store-project-info" method="POST" id="addProjectForm">
+
+
+            
+            <%- include('formField', {
+                label: 'Client Name',
+                id: 'clientName',
+                value:''
+            }) %>
+
+            
+            <%- include('formField', { label: 'Project Name' , id: 'projectName',value:'' }) %>
+            
+
+            <div class="form-group">
+                <label class="mt-4">Project Phase Details</label>
+                <div class="info-box" style="border: 1px solid #ddd; padding: 1rem; border-radius: 4px; margin-bottom: 1.5rem;">
+
+                    <%- include('dropdown', {
+                        id: 'phaseSelect',
+                        label: 'Name',
+                        selectClass: 'phase-select',
+                        name: 'phase',
+                        options: [
+                            { value: '', text: 'Select phase' },
+                            { value: 'discussion', text: 'discussion' },
+                            { value: 'poc', text: 'poc' },
+                            { value: 'dev', text: 'development' },
+                            { value: 'testing', text: 'testing' },
+                            { value: 'uat', text: 'uat' },
+                            { value: 'prd', text: 'production' },
+                        ]
+                    }) %>
+    
+                    <%- include('dropdown', {
+                        id: 'projectPhaseStatus',
+                        label: 'Status',
+                        selectClass: 'phase-status-select',
+                        name: 'phase-status-select',
+                        options: [
+                            { value: '', text: 'Select status' },
+                            { value: 'on-going', text: 'On going' },
+                            { value: 'dev', text: 'development' },
+                            { value: 'completed', text: 'Completed' },
+                            { value: 'on_hold', text: 'On Hold' },
+                            { value: 'NA', text: 'Yet to start' },
+                        ]
+                    }) %>
+    
+                    <%- include('date', { date: 'date', dateType: 'Start Date', id: 'phaseStart' }) %>
+                    <%- include('date', { date: 'date', dateType: 'End Date', id: 'phaseEnd' }) %>
+                </div>
+            </div>
+
+
+
+            <%- include('formField2', {
+                developerLabel: 'Delivery Team',
+                id: 'formField2',
+                labelFor: 'delivery1',
+                managerId: 'deliveryManager',
+                teamMembersId: 'deliveryTeamMembers',
+                managerNameArray:'',
+                teamNameArray:'',
+            }) %>
+
+            <%- include('formField2', {
+                developerLabel: 'Sales Team',
+                id: 'formField2',
+                labelFor: 'sales1',
+                managerId: 'salesManager',
+                teamMembersId: 'salesTeamMembers',
+                managerNameArray:'',
+                teamNameArray:'',
+            }) %>
+
+            <%- include('formField2', {
+                developerLabel: 'Tech Team',
+                id: 'formField2',
+                labelFor: 'tech1',
+                managerId: 'techManager',
+                teamMembersId: 'techTeamMembers',
+                managerNameArray:'',
+                teamNameArray:'',
+            }) %>
+
+            <%- include('formField2', {
+                developerLabel: 'QA Team',
+                id: 'formField2',
+                labelFor: 'testing1',
+                managerId: 'testingManager',
+                teamMembersId: 'testingTeamMembers',
+                managerNameArray:'',
+                teamNameArray:'',
+            }) %>
+
+            <%- include('formField2', {
+                developerLabel: 'BA Team',
+                id: 'formField2',
+                labelFor: 'analyst1',
+                managerId: 'businessAnalystManager',
+                teamMembersId: 'businessAnalystTeamMembers',
+                managerNameArray:'',
+                teamNameArray:'',
+            }) %>
+
+            <button type="submit" class="btn btn-success">Submit</button>
+
+            </form>
+        </div>
+    </div>
+</div>
+
+
+<script type="module"  src="../../js/manageProjectPage/addProject.js"></script>

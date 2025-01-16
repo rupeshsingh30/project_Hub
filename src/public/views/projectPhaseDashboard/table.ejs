@@ -1,0 +1,55 @@
+<div id="card-container" class="row justify-content-center">
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <% // Use the passed headers array to create table headers %>
+                <% headers.forEach(header => { %>
+                    <th><%= header %></th>
+                <% }); %>
+            </tr>
+        </thead>
+        <tbody>
+            <% tableBody.forEach((row, rowIndex) => { %>
+                <tr>
+                    <% row.forEach((cell, index) => { %>
+                        <td><%= cell %></td>
+                    <% }); %>
+                    <td>
+                        <!-- Button to trigger modal, with a unique data attribute -->
+                        <button type="button" class="btn btn-info" data-toggle="modal" data-target="#myModal"
+                            data-row-index="<%= rowIndex %>"
+                            data-delivery-manager="<%= additionalInfo[0][0][rowIndex] %>"
+                            data-delivery-team-members="<%= additionalInfo[0][1][rowIndex] %>"
+                            data-sales-manager="<%= additionalInfo[1][0][rowIndex] %>"
+                            data-sales-team-members="<%= additionalInfo[1][1][rowIndex] %>"
+                            data-tech-manager="<%= additionalInfo[2][0][rowIndex] %>"
+                            data-tech-team-members="<%= additionalInfo[2][1][rowIndex] %>"
+                            data-testing-manager="<%= additionalInfo[3][0][rowIndex] %>"
+                            data-testing-team-members="<%= additionalInfo[3][1][rowIndex] %>"
+                            data-ba-manager="<%= additionalInfo[4][0][rowIndex] %>"
+                            data-ba-team-members="<%= additionalInfo[4][1][rowIndex] %>">
+                            Show Details
+                        </button>
+                    </td>
+                </tr>
+            <% }); %>
+        </tbody>
+    </table>
+
+    <% if (totalPages > 1) { %> <!-- Show pagination controls only if there are multiple pages -->
+        <div class="pagination">
+            <% if (currentPage > 1) { %>
+                <a href="?phaseSelected=<%= phaseName %>&page=<%= currentPage - 1 %>">&laquo; Previous</a>
+            <% } %>
+            
+            <% for (let i = 1; i <= totalPages; i++) { %>
+                <a href="?phaseSelected=<%= phaseName %>&page=<%= i %>" class="<%= i === currentPage ? 'active' : '' %>"><%= i %></a>
+            <% } %>
+            
+            <% if (currentPage < totalPages) { %>
+                <a href="?phaseSelected=<%= phaseName %>&page=<%= currentPage + 1 %>">Next &raquo;</a>
+            <% } %>
+        </div>
+    <% } %>
+</div>
+<%- include('btnModal.ejs') %>

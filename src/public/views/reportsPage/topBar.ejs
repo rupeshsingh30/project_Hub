@@ -1,0 +1,43 @@
+<div class="top-bar" style="display: grid; grid-template-columns: 1fr 1fr 1fr 1fr 0.35fr; gap: 19px; align-items: center; margin-top: -4.5rem">
+    <!-- Client Name -->
+    <div>
+        <%- include('../manageProjectPage/formField.ejs', {
+            label: 'Client Name',
+            id: 'clientName',
+            value: ''
+        }) %>
+    </div>
+
+    <!-- Project Name -->
+    <div>
+        <%- include('../manageProjectPage/formField.ejs', {
+            label: 'Project Name',
+            id: 'projectName',
+            value: ''
+        }) %>
+    </div>
+
+    <!-- Start Date -->
+    <div style="margin-top: 1.4rem;">
+        <%- include('../manageProjectPage/date.ejs', { 
+            date: 'date',
+            dateType: 'Start Date',
+            id: 'phaseStart' 
+        }) %>
+    </div>
+
+    <!-- End Date -->
+    <div style="margin-top: 1.4rem;">
+        <%- include('../manageProjectPage/date.ejs', {
+            date: 'date',
+            dateType: 'End Date',
+            id: 'reportEndDate' 
+        }) %>
+    </div>
+
+    <!-- Search Button -->
+    <div style="margin-top: 2.5rem;">
+        <button type="button" class="btn btn-primary" id="searchBtn">Search</button>
+    </div>
+
+</div>

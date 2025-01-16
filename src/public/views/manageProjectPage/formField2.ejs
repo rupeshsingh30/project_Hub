@@ -1,0 +1,38 @@
+<!-- views/partials/developerForm.ejs -->
+<div id="<%= id %>">
+    <label class="mt-4" for="<%= labelFor %>" style="font-weight: bold; width: 150px;">
+        <%= developerLabel %>
+    </label>
+
+    <!-- Box with Manager and Team Members -->
+    <div class="info-box" style="border: 1px solid #ddd; padding: 1rem; border-radius: 4px; margin-bottom: 1.5rem;">
+
+        <div class="form-group" style="display: flex; flex-direction: column;">
+            <label for="<%= managerId %>" style="font-weight: bold; width: 150px;">Manager</label>
+            <div style="position: relative;">
+                <input type="text" class="form-control" id="<%= managerId %>" name="<%= managerId %>" value="<%= managerNameArray || '' %>"
+                    required
+                    style="width: 100%; padding: 0.5rem; border: 1px solid #ccc; border-radius: 4px;"/>
+                <div class="dropdown-menu" id="<%= managerId %>Dropdown" style="position: absolute; top: 100%; left: 0; width: 100%; display: none; border: 1px solid #ccc; border-radius: 4px; background: white; max-height: 200px; overflow-y: auto;">
+                    <!-- Options will be populated by JavaScript -->
+                </div>
+            </div>
+        </div>
+        
+
+        <div class="form-group" style="display: flex; flex-direction: column;">
+            <label for="<%= teamMembersId %>" style="font-weight: bold; width: 150px;">Team Members</label>
+            <div style="position: relative;">
+                <input type="text" class="form-control" id="<%= teamMembersId %>" name="<%= teamMembersId %>" value="<%=teamNameArray || '' %>" required
+                    style="width: 100%; padding: 0.5rem; border: 1px solid #ccc; border-radius: 4px;"/>
+                <div class="dropdown-menu" id="<%= teamMembersId %>Dropdown" style="position: absolute; top: 100%; left: 0; width: 100%; display: none; border: 1px solid #ccc; border-radius: 4px; background: white; max-height: 200px; overflow-y: auto;">
+                    <!-- Options will be populated by JavaScript -->
+                </div>
+            </div>
+        </div>
+
+        
+    </div>
+</div>
+
+

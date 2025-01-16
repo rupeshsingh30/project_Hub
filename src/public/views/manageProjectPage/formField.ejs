@@ -1,0 +1,11 @@
+<div class="form-group" style="display: flex; flex-direction: column;">
+    <label for="<%= id %>" class="mt-4" style="font-weight: bold; width: 150px;"><%= label %></label>
+    <div style="position: relative;">
+        <input type="text" class="form-control" id="<%= id %>" name="<%= id %>" value="<%= value%>"
+            required style="width: 100%; padding: 0.5rem; border: 1px solid #ccc; border-radius: 4px;" />
+        <div class="dropdown-menu" id="<%= id %>Dropdown"
+            style="position: absolute; top: 100%; left: 0; width: 100%; display: none; border: 1px solid #ccc; border-radius: 4px; background: white; max-height: 200px; overflow-y: auto;">
+            <!-- Options will be populated by JavaScript -->
+        </div>
+    </div>
+</div>

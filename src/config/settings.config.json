@@ -1,0 +1,16 @@
+{
+    "port": 4000,
+    "main_url": "http://localhost//",
+    "database":{
+        "url":"mongodb+srv://rupeshsc1999:TzIKfPk2AHpbMl78@mycluster.imcex5u.mongodb.net/?retryWrites=true&w=majority&appName=myCluster"
+    },
+    "otherAPI":{
+        "rpaLogs":{
+            "url":"https://sequelrpalogs.azurewebsites.net/",
+            "endPoints":{
+                        "reportsEndpoint":"api/get-report"
+                        }
+        }
+    },
+    "pagecountclients":["all","adani","tata power","gt","hero"]   
+}

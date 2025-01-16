@@ -1,0 +1,310 @@
+body {
+    padding: 20px;
+    background-color: #f8f9fa;
+    /* background: url('../images/b2.png') no-repeat center center fixed; */
+    background-size: cover;
+    font-family: "Roboto", sans-serif;
+}
+input[type="hidden"]
+input[type="date"]
+ {
+  width: 540px;
+  padding: 15px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  transition: border-color 0.3s ease;
+  
+}
+
+input[type="hidden"]:focus,
+input[type="date"]:focus {
+  outline: none;
+  border: 2px solid #38b2ac;
+  box-shadow: none; /* Remove focus outline */
+}
+
+
+textarea.form-control {
+    border: 2px solid #ccc; /* Initial border color */
+    border-radius: 5px; /* Optional: Add rounded corners */
+    padding: 10px; /* Optional: Adjust padding */
+    resize: vertical; /* Optional: Allow vertical resizing */
+    transition: border-color 0.3s ease; /* Smooth transition for border color change */
+}
+
+textarea.form-control:hover {
+    border-color: #38b2ac; /* Blue border color on hover */
+    box-shadow: none; /* Remove focus outline */
+}
+h2 {
+    margin-bottom: 20px;
+    margin-top: 20px;
+    color: #333;
+    font-weight: bold;
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+}
+table, th, td {
+    border: 1px solid #dee2e6;
+    padding: 15px;
+    text-align: center;
+}
+th {
+    background-color: #4fd1c5;;
+    color: #fff;
+    font-size: 1rem;
+    font-weight: bold;
+}
+td {
+    font-size: 0.9rem;
+}
+/* Sidebar styles */
+/* General sidebar styles */
+#sidebar {
+    width: 250px;
+    height: 100vh;
+    position: fixed;
+    top: 10;
+    left: 0;
+    z-index: 1000;
+    overflow-y: auto;
+    background-color: #f5f5f5;
+    color: #fff;
+}
+
+/* Sidebar wrapper */
+#sidebar-wrapper {
+    width: 250px;
+}
+
+/* List group items */
+.list-group-item {
+    background-color:#f5f5f5;
+    border: none;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    transition: background-color 0.3s ease, color 0.3s ease; /* Add transition for color */
+    border-radius: 15px; /* Add border-radius for curved edges */
+    margin-bottom: 5px 10px; /* Add margin to space out items and avoid overlap */
+}
+
+/* List group item hover effect */
+.list-group-item:hover {
+    background-color: #fff;
+    
+}
+
+/* List group item active state */
+.list-group-item.active {
+    background-color: #495057;
+    border-color: #495057;
+}
+
+/* Icons in the list group items */
+.list-group-item i {
+    font-size: 1.5em;
+    margin-right: 10px;
+    color: #4FD1C5; /* Initial icon color */
+    transition: color 0.3s ease; /* Smooth transition for color change */
+}
+
+/* Span in the list group items */
+.list-group-item span {
+    font-size: 1.1em;
+    font-family: "Roboto", sans-serif;; /* Change to your desired font family */
+    font-weight: bold;
+    flex-grow: 1;
+    color: grey; /* Initial text color */
+    transition: color 0.3s ease; /* Smooth transition for color change */
+}
+
+/* Span text color change on hover */
+.list-group-item:hover span {
+    color: black; /* Hover text color */
+}
+.list-group-item:hover i {
+    color: #38B2AC; /* Hover text color */
+}
+/* Logout button specific styling */
+#logoutButton {
+    margin-top: auto;
+}
+
+
+#card-container {
+    padding-top: 50px;
+    padding-right: 60px;
+    transition: padding-left 0.3s; /* Apply smooth transition for position change */
+}
+
+@media (min-width: 992px) {
+    /* Adjust the position when sidebar is open */
+    #sidebar.show + .main-card-container {
+        
+        padding-right: 0px; /* Width of the sidebar plus some padding */
+        
+    }
+}
+
+@media (max-width: 991.98px) {
+    /* Adjust the position when sidebar is closed */
+    #sidebar:not(.show) + .main-card-container {
+        padding-top: 0px;
+        
+    }
+}
+ 
+
+@media (min-width: 992px) {
+    /* Adjust the position when sidebar is open */
+    #sidebar.show + .container {
+        padding-left: 250px; /* Width of the sidebar plus some padding */
+    }
+}
+
+@media (max-width: 991.98px) {
+    /* Adjust the position when sidebar is closed */
+    #sidebar + .container {
+        padding-left: 0;
+    }
+}
+
+
+.card {
+    margin-left: 50px;
+    margin-bottom: 50px;
+    background-color: #4FD1C5; /* Light teal background */
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    background-color: #38B2AC; /* Darker teal background on hover */
+    
+}
+
+.card-title {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #fff;
+    text-decoration: none; /* Remove underline */
+}
+.task-count {
+    color: #fff !important; /* White text color */
+    font-weight: bold; /* Bold text */
+}
+a.card {
+    text-decoration: none; /* Remove underline */
+}
+       
+.navbar-brand img {
+    background-color: #fff;
+    max-width: 300px;
+    height: auto;
+    border-radius: 15px;
+}
+.navbar-toggler {
+    background-color: white;
+    border: 2px solid #ccc; /* Added border for hamburger icon */
+    border-radius: 5px;
+}
+
+.modal-content {
+    background-color: #fff; /* Light teal background */
+    border-radius: 15px;
+    border: none;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    font-family: "Roboto", sans-serif;
+}
+
+.modal-header {
+    border-bottom: none;
+}
+
+.modal-title {
+    color: black; /* White title color */
+    font-weight: bold;
+}
+
+.close {
+    color: #fff; /* White close button */
+    font-weight: bold;
+}
+
+.modal-body {
+    color: rgb(254, 249, 249); 
+}
+
+.modal-footer {
+    border-top: none;
+}
+
+.btn-secondary {
+    background-color: #4fd1c5; /* Custom color for cancel button */
+    border: none;
+    transition: background-color 0.1s; 
+}
+
+.btn-secondary:hover {
+    background-color: #38b2ac; /* Darker shade on hover */
+}
+
+.btn-info {
+    background-color: #4fd1c5; /* Custom color for cancel button */
+    border: none;
+    transition: background-color 0.1s; 
+}
+
+.btn-info:hover {
+    background-color: #38b2ac; /* Darker shade on hover */
+}
+
+
+.btn-primary {
+    background-color: #4fd1c5; /* Custom color for logout button */
+    border: none;
+    transition: background-color 0.1s; 
+}
+
+.btn-primary:hover {
+    background-color: #38b2ac;/* Darker shade on hover */
+}
+
+.btn-success {
+    background-color: #4FD1C5;
+    border-color: #4FD1C5;
+    transition: background-color 0.1s;
+    /* padding: 10px 20px;
+    margin-top: 6px;
+    font-size: 16px;
+    border-radius: 6px; */
+}
+
+
+.btn-success:hover {
+    background-color: #38b2ac;
+    
+}
+.btn-success:focus, .btn-success:active {
+    background-color: #38b2ac; /* Ensure the same color on focus and active */
+    border: none;
+    box-shadow: none; /* Remove the focus shadow */
+}
+
+
+.btn-link {
+    font-weight: 400;
+    color: #fbfcfe;
+    text-decoration: none;
+}

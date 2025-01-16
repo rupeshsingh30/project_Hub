@@ -1,0 +1,45 @@
+<div class="collapse" id="sidebar">
+    <div class="bg-light border-right" id="sidebar-wrapper">
+        <div class="list-group list-group-flush">
+            <% const sidebarItems = [
+                { href: '#', label: empCode || 'Unknown', icon: 'bx bxs-user-circle' },
+                { href: '#', label: 'Add/Modify Project', icon: 'bx bx-add-to-queue', id: 'addModifyProject' },
+                { href: '#', label: 'Taskboard', icon: 'bx bx-task' },
+                { href: '#', label: 'Page count Dashboard', icon: 'bx bxs-grid-alt', id: 'pageCountDashboardButton'  },
+                { href: '#', label: 'Reports', icon: 'bx bxs-report', id: 'reportsButton' },
+                { href: '/html/employee-info.html', label: 'Employee Management', icon: 'bx bxs-report' },
+                { href: '#', label: 'Logout', icon: 'bx bx-log-out' }
+            ]; %>
+
+            <% for (let item of sidebarItems) { %>
+                <% if (item.label === 'Logout') { %>
+                    <a href="<%= item.href %>" class="list-group-item list-group-item-action" id="logoutButton" data-toggle="modal" data-target="#logoutModal">
+                        <i class='<%= item.icon %>'></i>
+                        <span><%= item.label %></span>
+                    </a>
+                <% } else if (item.label === 'Add/Modify Project') { %>
+                    <form action="/project/manage-project" method="POST" style="display: none;" id="addModifyProjectForm"></form>
+                    <a href="#" class="list-group-item list-group-item-action" onclick="document.getElementById('addModifyProjectForm').submit(); return false;">
+                        <i class='<%= item.icon %>'></i>
+                        <span><%= item.label %></span>
+                    </a>
+                <% } else if (item.label === 'Page count Dashboard') { %>
+                    <a href="#" class="list-group-item list-group-item-action"  id="<%= item.id %>" onclick="handlePageCountDashboardClick(); return false;">
+                        <i class='<%= item.icon %>'></i>
+                        <span><%= item.label %></span>
+                    </a>
+                <% } else if (item.label === 'Reports') { %>
+                    <a href="#" class="list-group-item list-group-item-action" id="<%= item.id %>" onclick="handleReportsClick(); return false;">
+                        <i class='<%= item.icon %>'></i>
+                        <span><%= item.label %></span>
+                    </a>
+                <% } else { %>
+                    <a href="<%= item.href %>" class="list-group-item list-group-item-action">
+                        <i class='<%= item.icon %>'></i>
+                        <span><%= item.label %></span>
+                    </a>
+                <% } %>
+            <% } %>
+        </div>
+    </div>
+</div>

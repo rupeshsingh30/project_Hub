@@ -1,0 +1,109 @@
+body {
+    font-family: Arial, sans-serif;
+}
+
+.top-bar {
+    background-color: #f8f9fa;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.top-bar label {
+    margin-right: 10px;
+    font-weight: bold;
+}
+
+.top-bar input[type="text"],
+.top-bar input[type="date"] {
+    margin-right: 20px;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.top-bar button {
+    padding: 5px 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+}
+
+#prevPageBtn {
+    background-color: #4fd1c5;
+    border-color: #17a2b8;
+    color: #ffffff; /* Text color */
+}
+
+
+#searchBtn{
+    background-color: #4fd1c5;;
+    border-color: #20c997;
+    color: #ffffff; /* Text color */
+}
+
+
+#prevPageBtn:hover,
+#prevPageBtn:focus {
+    background-color: #4fd1c5; /* Darker shade for hover/focus */
+    border-color: #17a2b8;
+}
+
+#nextPageBtn {
+    background-color: #4fd1c5;;
+    border-color: #17a2b8;
+    color: #ffffff; /* Text color */
+}
+
+#nextPageBtn:hover,
+#nextPageBtn:focus {
+    background-color: #17a2b8; /* Darker shade for hover/focus */
+    border-color: #17a2b8;
+}
+
+
+.lds-ring {
+    display: none;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 9999; /* Ensure it's above other elements */
+}
+
+.lds-ring div {
+    box-sizing: border-box;
+    display: block;
+    position: absolute;
+    width: 64px;
+    height: 64px;
+    margin: 8px;
+    border: 8px solid currentColor;
+    border-radius: 50%;
+    animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+    border-color: currentColor transparent transparent transparent;
+}
+
+.lds-ring div:nth-child(1) {
+    animation-delay: -0.45s;
+}
+
+.lds-ring div:nth-child(2) {
+    animation-delay: -0.3s;
+}
+
+.lds-ring div:nth-child(3) {
+    animation-delay: -0.15s;
+}
+
+@keyframes lds-ring {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}

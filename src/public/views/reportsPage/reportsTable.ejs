@@ -1,0 +1,38 @@
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Execution ID</th>
+            <th>Date</th>
+            <th>Start Time</th>
+            <th>End Time</th>
+            <th>Duration</th>
+            <th>Status</th>
+            <!-- Add more headers as needed -->
+        </tr>
+    </thead>
+
+    <tbody id="reportsTableBody" class="table-group-divider">
+        
+        <% if (Array.isArray(processLogs) && processLogs.length > 0) { %>
+            <% processLogs.forEach(log => { %>
+                <tr>
+                    <td><%= log.executionId %></td>
+                    <td><%= new Date(log.createdAt).toLocaleString() %></td>
+                    <td><%= new Date(log.startTime).toLocaleString() %></td>
+                    <td><%= new Date(log.endTime).toLocaleString() %></td>
+                    <td><%= log.duration %></td>
+                    <td><%= log.status %></td>
+                    <!-- Add more columns as needed -->
+                </tr>
+            <% }); %>
+        <% } else { %>
+            <tr>
+                <td colspan="6">No reports available</td>
+            </tr>
+        <% } %>
+    </tbody>
+
+</table>
+
+<%- include('pagination.ejs') %>
+

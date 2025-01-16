@@ -1,0 +1,21 @@
+<!-- main-page.ejs -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Main Page</title>
+  <link rel="stylesheet" href="/../../css/loginPage/loginPage.css" />
+</head>
+<body>
+  <div class="parent-container">
+    <img class="Company-Logo" src="../../images/SAI_Logo.png" />
+    
+    <% if (typeof message !== 'undefined' && message !== null) { %>
+      <%- include('alert.ejs', { message: message, alertType: alertType }) %>
+    <% } %>
+
+    <%- include('form.ejs') %>
+    
+  </div>
+</body>
+</html>

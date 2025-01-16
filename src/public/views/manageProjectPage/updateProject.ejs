@@ -1,0 +1,130 @@
+<!-- views/manageProjectPage/updateProject.ejs -->
+<div class="main-card-container">
+    <div id="card-container" class="row justify-content-center">
+        <div class="container mt-5">
+            <% if (message) { %>
+                <%- include('../loginPage/alert.ejs', { message: message, alertType: alertType || '' }) %>
+            <% } %>
+
+            <h2 class="text-center">UPDATE DETAILS</h2>
+
+            <form id="updateProjectForm" action="/project/show-details" method="POST">
+                <!-- Client Name Field -->
+                <%- include('formField.ejs', { label: 'Client Name', id: 'clientName', value: clientName || '' }) %>
+
+                <!-- Project Name Field -->
+                <%- include('formField.ejs', { label: 'Project Name', id: 'projectName', value: projectName || '' }) %>
+
+                <% if (submitted === 'true') { %>
+                    <!-- Project Phase Details -->
+                    <div class="form-group">
+                        <label class="mt-4">Project Phase Details</label>
+                        <div class="info-box" style="border: 1px solid #ddd; padding: 1rem; border-radius: 4px; margin-bottom: 1.5rem;">
+                            <%- include('previousPhases', { phases: phases }) %>
+        
+                            <!-- Phase Dropdown -->
+                            <%- include('dropdown', {
+                                id: 'phaseSelect',
+                                label: 'Phase',
+                                selectClass: 'phase-select',
+                                name: 'phase',
+                                options: [
+                                    { value: '', text: 'Select phase' },
+                                    { value: 'discussion', text: 'discussion' },
+                                    { value: 'poc', text: 'poc' },
+                                    { value: 'dev', text: 'development' },
+                                    { value: 'testing', text: 'testing' },
+                                    { value: 'uat', text: 'uat' },
+                                    { value: 'prd', text: 'production' },
+                                ],
+                                defaultValue: previousPhaseName
+                            }) %>
+
+                            <!-- Status Dropdown -->
+                            <%- include('dropdown', {
+                                id: 'projectPhaseStatus',
+                                label: 'Status',
+                                selectClass: 'phase-status-select',
+                                name: 'phase-status-select',
+                                options: [
+                                    { value: '', text: 'Select status' },
+                                    { value: 'on-going', text: 'on going' },
+                                    { value: 'completed', text: 'completed' },
+                                    { value: 'on_hold', text: 'on hold' },
+                                    { value: 'NA', text: 'yet to start' },
+                                ],
+                                defaultValue: previousStatus
+                            }) %>
+
+                            <!-- Dates -->
+                            <%- include('date', { date: 'date', dateType: 'Start Date', id: 'phaseStart', defaultValue: previousStartDate }) %>
+                            <%- include('date', { date: 'date', dateType: 'End Date', id: 'phaseEnd', defaultValue: previousEndDate }) %>
+                        </div>
+                    </div>
+
+                    <!-- Team Fields -->
+                    <%- include('formField2', {
+                        developerLabel: 'Delivery Team',
+                        id: 'deliveryTeam',
+                        labelFor: 'delivery1',
+                        managerId: 'deliveryManager',
+                        teamMembersId: 'deliveryTeamMembers',
+                        managerNameArray: deliveryTeamManagers,
+                        teamNameArray: deliveryTeamTeamMembers,
+                    }) %>
+        
+                    <%- include('formField2', {
+                        developerLabel: 'Sales Team',
+                        id: 'salesTeam',
+                        labelFor: 'sales1',
+                        managerId: 'salesManager',
+                        teamMembersId: 'salesTeamMembers',
+                        managerNameArray: salesTeamManagers,
+                        teamNameArray: salesTeamTeamMembers,
+                    }) %>
+        
+                    <%- include('formField2', {
+                        developerLabel: 'Tech Team',
+                        id: 'techTeam',
+                        labelFor: 'tech1',
+                        managerId: 'techManager',
+                        teamMembersId: 'techTeamMembers',
+                        managerNameArray: techTeamManagers,
+                        teamNameArray: techTeamTeamMembers,
+                    }) %>
+        
+                    <%- include('formField2', {
+                        developerLabel: 'QA Team',
+                        id: 'qaTeam',
+                        labelFor: 'testing1',
+                        managerId: 'testingManager',
+                        teamMembersId: 'testingTeamMembers',
+                        managerNameArray: testingTeamManagers,
+                        teamNameArray: testingTeamTeamMembers,
+                    }) %>
+        
+                    <%- include('formField2', {
+                        developerLabel: 'BA Team',
+                        id: 'baTeam',
+                        labelFor: 'analyst1',
+                        managerId: 'businessAnalystManager',
+                        teamMembersId: 'businessAnalystTeamMembers',
+                        managerNameArray: businessAnalystTeamManagers,
+                        teamNameArray: businessAnalystTeamTeamMembers,
+                    }) %>
+
+                    <!-- Hidden Input and Update Button -->
+                    <input type="hidden" name="actionType" value="update">
+                    <button type="submit" class="btn btn-success mt-3" id="updateDetailsBtn">Update</button>
+
+                <% } else { %>
+                    <!-- Hidden Input and Submit Button -->
+                    <input type="hidden" name="actionType" value="submit">
+                    <button type="submit" class="btn btn-success mt-3" id="submitDetailsBtn">Submit</button>
+                <% } %>
+            </form>
+        </div>
+    </div>
+</div>
+
+<script type="module" src="../../js/manageProjectPage/updateProject.js"></script>

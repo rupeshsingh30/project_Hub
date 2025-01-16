@@ -1,0 +1,166 @@
+
+
+body {
+    background-color: #f5f5f5;
+    background-size: cover;
+    font-family: "Roboto", sans-serif;
+}
+
+input[type="text"]
+input[type="date"]
+ {
+  width: 540px;
+  padding: 15px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  transition: border-color 0.3s ease;
+  
+}
+
+input[type="text"]:focus,
+input[type="date"]:focus {
+  outline: none;
+  border: 2px solid #38b2ac;
+  box-shadow: none; /* Remove focus outline */
+}
+
+.container {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    max-width: 450px;
+    width: 100%;
+    border: 2px solid #38B2AC; /* Adds a border with the desired color */
+}
+
+h2 {
+    color: #343a40;
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    font-weight: bold;
+    color: #4c4c4e;
+    
+}
+
+.phase-select {
+    border-radius: 6px;
+    padding: 10px;
+    border: 1px solid #d0dace
+    ;
+}
+
+.phase-select:focus {
+    border-color: #80bdff;
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+    border: 2px solid #38b2ac
+    
+}
+
+#projectDetails {
+    margin-top: 20px;
+}
+
+#phases {
+    margin-top: 20px;
+}
+
+#phases h4 {
+    margin-bottom: 15px;
+    color: #343a40;
+    font-size: 22px;
+}
+
+#phases .form-group:last-of-type {
+    margin-bottom: 0;
+}
+
+.btn-success {
+    background-color: #4FD1C5;
+    border-color: #4FD1C5;
+    padding: 10px 20px;
+    margin-top: 6px;
+    font-size: 16px;
+    border-radius: 6px;
+}
+
+
+.btn-success:hover {
+    background-color: #38b2ac;
+    
+}
+.btn-success:focus, .btn-secondary:active {
+    background-color: #38b2ac; /* Ensure the same color on focus and active */
+    border: none;
+    box-shadow: none; /* Remove the focus shadow */
+}
+
+#fetchProjectBtn.btn-primary {
+    background-color: #4FD1C5; /* Custom teal background */
+    color: #fff; /* White text color */
+    border: none; /* Remove border */
+    padding: 10px 20px; /* Adjust padding as needed */
+    font-size: 1rem; /* Adjust font size */
+    border-radius: 5px; /* Add border radius */
+    transition: background-color 0.3s; /* Smooth background color transition */
+}
+
+#fetchProjectBtn.btn-primary:hover {
+    background-color: #38B2AC; /* Darker teal background on hover */
+}
+
+#fetchProjectBtn.btn-primary:focus, 
+#fetchProjectBtn.btn-primary:active,
+#fetchProjectBtn.btn-primary.focus,
+#fetchProjectBtn.btn-primary:active:focus {
+    background-color: #4FD1C5; /* Ensure same color on focus and active */
+    box-shadow: none; /* Remove focus outline */
+    outline: none; /* Remove outline on focus */
+}
+
+.developer-card,
+.manager-card {
+    margin: 10px 0;
+    display: flex;
+}
+
+.card-body {
+    flex-grow: 1;
+}
+
+.developer-name,
+.manager-name {
+    flex-grow: 1;
+}
+
+.bx {
+    flex-shrink: 0;
+}
+
+/* styles.css */
+.alert {
+    opacity: 1; /* Initially visible */
+    transition: opacity 1s ease-in-out; /* Smooth transition for fade-out effect */
+}
+
+/* CSS class to handle fade-out */
+.alert.fade-out {
+    animation: fadeOut 4s forwards; /* Fade-out effect after 6 seconds */
+}
+
+@keyframes fadeOut {
+    0% {
+        opacity: 1;
+    }
+    99% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+

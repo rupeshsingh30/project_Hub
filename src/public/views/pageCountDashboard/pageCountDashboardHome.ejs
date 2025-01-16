@@ -1,0 +1,23 @@
+<div id="card-container" class="row justify-content-center">
+
+    <!-- Loader -->
+    <div class="lds-ring" id="customLoader" style="color:#4fd1c5">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+
+    <!-- Include the top bar -->
+    <%- include('../reportsPage/topBar.ejs') %>
+        
+    <% if (typeof message !== 'undefined' && message !== null) { %>
+        <%- include('../loginPage/alert.ejs', { message: message, alertType: alertType }) %>
+      <% } %>
+
+    <%- include('pageCountDashboardTable.ejs', {processLogs : processLogs}) %>
+
+</div>
+
+
+<script type="module" src="../../js/pageCountDashboard/pageCountDashboard.js"></script>

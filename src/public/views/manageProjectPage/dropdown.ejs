@@ -1,0 +1,9 @@
+<!-- views/partials/dropdown.ejs -->
+<div class="form-group">
+    <label for="<%= id %>"><%= label %></label>
+    <select class="form-control <%= selectClass %>" id="<%= id %>" name="<%= name %>" required>
+        <% options.forEach(function(option) { %>
+            <option value="<%= option.value %>" <%= option.value === defaultValue ? 'selected' : '' %>><%= option.text %></option>
+        <% }); %>
+    </select>
+</div>

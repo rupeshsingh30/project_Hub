@@ -1,0 +1,23 @@
+<div class="main-card-container">
+    <div id="card-container" class="row justify-content-center">
+        <% const phases = [
+            { phase: 'prd', label: 'PRD' },
+            { phase: 'dev', label: 'DEV' },
+            { phase: 'uat', label: 'UAT' },
+            { phase: 'poc', label: 'POC' },
+            { phase: 'testing', label: 'TESTING' },
+            { phase: 'on_hold', label: 'ON HOLD' },
+            { phase: 'discussion', label: 'DISCUSSION' },
+        ]; %>
+
+        <% phases.forEach(phase => { %>
+            <div class="col-md-4 mb-4">
+                <a href="/project-phases/display-phase-data?phaseSelected=<%= phase.phase %>" class="card text-center" data-type="<%= phase.phase %>">
+                    <div class="card-body">
+                        <h5 class="card-title"><%= phase.label %></h5>
+                    </div>
+                </a>
+            </div>
+        <% }); %>
+    </div>
+</div>
