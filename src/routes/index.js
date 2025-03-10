@@ -9,6 +9,7 @@ const pageCountDashboardRouter = require('./pageCountDashboard');
 const projectPhaseDashboardRouter = require('./projectPhaseDashboard');
 const taskboardPageRouter = require('./taskboardPage');
 const reportsPageRouter = require('./reportsPage');
+const licensePageRouter = require('./licenseExpirypage')
 
 
 // Use feature-specific routers
@@ -19,5 +20,7 @@ router.use('/page-count-dashboard', pageCountDashboardRouter);
 router.use('/project-phases', projectPhaseDashboardRouter);
 router.use('/taskboard',taskboardPageRouter)
 router.use('/reports',reportsPageRouter)
+router.use('/license',licensePageRouter)
+
 
 module.exports = router;

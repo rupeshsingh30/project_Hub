@@ -1,3 +1,5 @@
+
+
 <div class="collapse" id="sidebar">
     <div class="bg-light border-right" id="sidebar-wrapper">
         <div class="list-group list-group-flush">
@@ -8,6 +10,7 @@
                 { href: '#', label: 'Page count Dashboard', icon: 'bx bxs-grid-alt', id: 'pageCountDashboardButton'  },
                 { href: '#', label: 'Reports', icon: 'bx bxs-report', id: 'reportsButton' },
                 { href: '/html/employee-info.html', label: 'Employee Management', icon: 'bx bxs-report' },
+                { href: '#', label: 'License Expiry', icon: 'bx bxs-report', id: 'licenseExpiryButton' },
                 { href: '#', label: 'Logout', icon: 'bx bx-log-out' }
             ]; %>
 
@@ -33,6 +36,11 @@
                         <i class='<%= item.icon %>'></i>
                         <span><%= item.label %></span>
                     </a>
+                <% } else if (item.label === 'License Expiry') { %>
+                    <a href="#" class="list-group-item list-group-item-action" id="<%= item.id %>" onclick="handleLicenseExpiryClick(); return false;">
+                        <i class='<%= item.icon %>'></i>
+                        <span><%= item.label %></span>
+                    </a>
                 <% } else { %>
                     <a href="<%= item.href %>" class="list-group-item list-group-item-action">
                         <i class='<%= item.icon %>'></i>
@@ -43,3 +51,13 @@
         </div>
     </div>
 </div>
+
+
+<!-- Placeholder to display fetched data -->
+<div id="licenseExpiryContent"></div>
+
+<script src="../../js/licenseExpiryPage/index.js"></script>
+
+
+
+

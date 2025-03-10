@@ -52,6 +52,7 @@ const renderPage = (res, mainPartial, options = {}) => {
         mainPartial,
         empCode: options.empCode || '',
         message: options.message || '',
+        data: options.data || '',
         alertType: options.alertType || '',
         submitted: options.submitted || '',
         clientName: options.clientName || '',

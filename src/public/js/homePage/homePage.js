@@ -72,3 +72,8 @@ function handleReportsClick() {
 function handlePageCountDashboardClick() {
     window.location.href = '/page-count-dashboard/home';
 }
+
+function handleLicenseExpiryClick() {
+    window.location.href = '/license/license-expiry';
+    // window.location.href = '/reports/reports-home';
+}

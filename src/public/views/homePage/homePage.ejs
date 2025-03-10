@@ -16,6 +16,8 @@
     <link rel="stylesheet" href="../../css/manageProjectPage/addProject.css">
     <link rel="stylesheet" href="../../css/reportsPage/reportsHome.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+    <script src="https://unpkg.com/xlsx/dist/xlsx.full.min.js"></script>
+
 
 
 </head>
@@ -27,8 +29,9 @@
     <%- include('sidebar.ejs', { empCode: empCode }) %>
 
     <div id="main-screen-container">
-        <%- include(mainPartial) %>
+        <%- include(mainPartial),{ data: data } %>
     </div>
+
     
     <!-- Logout Confirmation Modal -->
     <%- include('logout.ejs') %>

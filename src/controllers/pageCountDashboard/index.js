@@ -9,6 +9,7 @@ async function getPageCountDashboardPage(req, res) {
 }
 
 async function showPageCount(req, res) {
+    // console.log('req :',req)
     const { apiURL, fromDate, toDate } = req.query;
 
     const params = {
